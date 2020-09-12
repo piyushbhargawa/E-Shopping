@@ -1,0 +1,37 @@
+<mat-card-content>
+  <form class="example-form">
+    <mat-form-field >
+      <mat-label>Name</mat-label>
+      <input matInput name="name" [(ngModel)]="name" readonly>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput name="email" [(ngModel)]="data.email">
+    </mat-form-field>
+    <!-- <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input matInput name="password" type="password" readonly [(ngModel)]="data.password">
+    </mat-form-field> -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Mobile</mat-label>
+      <input matInput name="phone" [(ngModel)]="data.mobile" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Gender</mat-label>
+      <input matInput name="gender" [(ngModel)]="data.gender" readonly>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Date Of Birth</mat-label>
+      <input matInput name="birth" [(ngModel)]="data.dateOfBirth" readonly>
+    </mat-form-field>
+  </form>
+  <ul>
+    Languages You Know:
+    <div *ngFor="let i of data.languages">
+      <li>{{i}}</li>
+    </div>
+  </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class = "update" (click)="update()">Update</button>
+  </mat-card-actions>

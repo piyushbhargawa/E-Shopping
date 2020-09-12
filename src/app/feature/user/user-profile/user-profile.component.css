@@ -1,0 +1,214 @@
+.main {
+  width: 100%;
+  margin-top: 50px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background: linear-gradient(-177deg, #e6e6e6 0%, #999494 19%, rgba(42, 42, 46, 0.97) 70%);
+}
+
+.bg-image {
+  position: absolute;
+  background: url("../../../../assets/bba5cf5acb1e03045d81555821b986c7461ca64c.jpg");
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  width: 100%;
+  margin-top: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profile {
+  color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 34px;
+  width: 100%;
+  font-family: monospace;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
+}
+
+.profile:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #42aad3;
+  cursor: pointer;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #42aad3;
+}
+
+.order {
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: white;
+  margin-top: 34px;
+  height: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: monospace;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  outline: none;
+}
+
+.order:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #42aad3;
+  cursor: pointer;
+}
+
+.changePassword {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 68px;
+  color: white;
+  height: 30px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: monospace;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
+}
+
+.changePassword:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #42aad3;
+  cursor: pointer;
+}
+
+h3 {
+  color: #42aad3;
+}
+
+mat-card-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.mat-card-image {
+  height: 220px;
+}
+
+.image:hover .mat-card-image {
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0.3;
+}
+
+.image:hover mat-icon {
+  opacity: 1;
+  cursor: pointer;
+}
+
+mat-icon {
+  position: absolute;
+  top: 85px;
+  opacity: 0;
+  left: 45%;
+  color: white;
+}
+
+.main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.main-content .profile-item-one {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
+  margin-left: 31px;
+  margin-right: 30px;
+  width: 100px;
+  margin-top: -132px;
+  position: relative;
+  min-height: 390px;
+  -webkit-box-shadow: 0 4px 8px 0 #b0c1d9, 0 6px 20px 0 #b0c1d9;
+          box-shadow: 0 4px 8px 0 #b0c1d9, 0 6px 20px 0 #b0c1d9;
+  background-color: black;
+}
+
+.main-content .profile-item-two {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 65%;
+          flex: 0 1 65%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 445px;
+  background-color: rgba(0, 0, 0, 0.9);
+  margin-top: 149px;
+}
+
+@media (max-width: 599px) {
+  .main {
+    min-height: 1000px;
+  }
+  .main-content .profile-item-one {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin-top: 85px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  .main-content .profile-item-two {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin-top: 0;
+  }
+}
+/*# sourceMappingURL=user-profile.component.css.map */

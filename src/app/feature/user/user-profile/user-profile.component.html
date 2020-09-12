@@ -1,0 +1,27 @@
+<div class="main">
+  <div class="bg-image"></div>
+  <div class="main-content">
+    <mat-card class="profile-item-one">
+      <div class="image">
+        <img mat-card-image [src]="imgSrc" class="matImg" />
+        <input matCardInput type="file" class="imgChange" (change)="fileInput($event)" style="display: none;" #fileinput>
+        <mat-icon (click)="fileinput.click()">add_a_photo</mat-icon>
+      </div>
+      <mat-card-content>
+        <h3>Welcome, {{id}}!</h3>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="container">
+          <div class="profile" routerLink="/feature/user/userProfile/profile" routerLinkActive="active">View & Edit Profile</div>
+          <div class="changePassword" *ngIf="auth.isAdmin() !== 'true'" routerLink="/feature/user/userProfile/order"  routerLinkActive="active">Orders</div>
+          <div class="order" routerLink="/feature/user/userProfile/changePassword"  routerLinkActive="active">Change Password</div>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+    <!-- <div class="profile-item-two"> -->
+      <mat-card class="profile-item-two">
+          <router-outlet></router-outlet>
+      </mat-card>
+    </div>
+  </div>
+<!-- </div> -->

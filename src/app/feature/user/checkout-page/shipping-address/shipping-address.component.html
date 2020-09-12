@@ -1,0 +1,19 @@
+<div class="address">
+  <mat-card class="addAddress">
+    <i class="fa fa-plus plusIcon" (click)="add()"></i>
+  </mat-card>
+  <div class="addressCards" *ngFor="let item of address">
+    <i class="fa fa-check-circle chooseAddress" (click)="Address(item)" [ngClass]="{choosenAddress: (chooseAddress === true && choosenAddress === item) }"></i>
+    <mat-card class="addressCard">
+      <mat-label><b>Name: </b>{{ item.name }}</mat-label><br />
+      <mat-label><b>Mobile No.: </b>{{ item.mobile }}</mat-label><br />
+      <mat-label><b>Address: </b>{{ item.Address }}</mat-label><br />
+      <mat-label>{{ item.town+","+item.state }}</mat-label><br />
+      <mat-label><b>Pincode: </b>{{ item.pincode }}</mat-label><br />
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="update(item)">Edit</button>
+        <button mat-raised-button color="primary" (click)="deleteAddress(item)">Delete</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

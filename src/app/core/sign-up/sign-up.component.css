@@ -1,0 +1,147 @@
+mat-card-title {
+  color: rgb(248, 240, 240);
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+mat-form-field {
+  color: white;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  font-variant: small-caps;
+  padding: 0px 0;
+}
+
+::ng-deep .mat-form-field-label{
+  color:white !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: white !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
+  background-color: #50d0fb !important;
+  transition: 10s;
+}
+
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}
+
+.gender {
+  color: white;
+  margin-right: 10px;
+  font-weight: 400;
+}
+
+.male {
+  margin-right: 10px;
+  color: white;
+  font-weight: normal;
+}
+
+.female {
+  color: white;
+  font-weight: normal;
+}
+
+.bg-image {
+  background-image: url("https://i.picsum.photos/id/1059/7360/4912.jpg");
+  filter: blur(4px);
+  height: 100%;
+  min-height: max-content;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+mat-card{
+  width: 400px;
+  background: rgba(33, 33, 34, 0.5);
+  /* transform: translate(10px, -574px); */
+  margin-top: 15px;
+  border-radius: 32px;
+}
+
+.visibleButton {
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.remember {
+  color: white;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.signUp-main {
+  display: block;
+    width: 100%;
+    min-height: 500px;
+    height: 817px;
+    position: relative;
+}
+
+.signUp-row {
+  position: absolute;
+    top: 5%;
+    bottom: auto;
+    left: 40%;
+    right: auto;
+    /* z-index: 10; */
+    /* height: 600px; */
+    width: 20%;
+    padding: 10px;
+
+}
+
+.avatarDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-hint {
+  color: white;
+}
+
+@media only screen and (max-width:500px) {
+  .bg-text {
+    width: 300px;
+  }
+  mat-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .abc {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+@media only screen and (max-width:300px) {
+  .bg-text {
+    width: 200px;
+  }
+}
+

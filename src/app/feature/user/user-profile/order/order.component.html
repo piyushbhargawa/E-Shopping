@@ -1,0 +1,42 @@
+<mat-form-field *ngIf="trigger">
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia">
+</mat-form-field>
+<div class="mat-elevation-z8" *ngIf="trigger">
+  <table mat-table *ngIf="trigger" [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Order ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="products">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Products </th>
+      <td mat-cell *matCellDef="let row"> {{row.products}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Total </th>
+      <td mat-cell *matCellDef="let row"> {{row.total | currency:'INR' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="invoice">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Invoice </th>
+      <td mat-cell *matCellDef="let row"> <button mat-raised-button (click)="invoice(row)">
+          <mat-icon>get_app</mat-icon>Invoice
+        </button> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+
+<div *ngIf="!trigger" class="noOrders">
+  <img src="../../../../../assets/no-record-found.png" class="noOrdersImg">
+  <div class="notext">
+    No orders found!
+  </div>
+</div>

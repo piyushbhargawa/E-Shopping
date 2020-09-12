@@ -1,0 +1,60 @@
+<div class="main">
+  <div class="content">
+    <div class="progress">
+      <mat-progress-bar mode="determinate" [value]="value"></mat-progress-bar>
+    </div>
+    <div class="redirectedPage">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="priceDetails">
+    <div class="outer">
+      <div class="inner"></div>
+    </div>
+    <div class="details">
+      <mat-card class="priceCard">
+        <mat-card-content style="font-family: monospace;">
+          <h3 style="font-size: large; font-weight: 500; font-family: monospace;">PRICE DETAILS</h3>
+          <div style="display: flex; justify-content: space-between;">Sub Total
+            <div>{{ total | currency:"&#8377;" }}</div>
+          </div>
+          <div style="display: flex; justify-content: space-between;">Discount
+            <div> {{discount | currency:"&#8377;"}} </div>
+          </div>
+          <div style="display: flex; justify-content: space-between;">Delivery
+            <div style="display: flex;"><s>{{49 | currency:"&#8377;"}} </s>
+              <div style="color: #03a685; margin-left: 3px;"> FREE</div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="priceCard pc1" >
+        <mat-card-content>
+          <div style="display: flex; justify-content: space-between; font-weight: 700;">Bag Total
+            <div>{{total | currency:"&#8377;"}}</div>
+          </div>
+          <button class="button" *ngIf="buttonToggle" (click)="continue()">
+            <div class="fillDiv"></div>
+            <div class="color">Continue</div>
+          </button>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="priceCard pc1" *ngIf="buttonToggle" style="display: flex;">
+        <div *ngFor="let item of cart;" class="productImage">
+          <img [src]="item.image[0]" class="productImg">
+        </div>
+      </mat-card>
+      <mat-card class="priceCard pc1" *ngIf="!buttonToggle">
+        <div class="address">
+          <div style="font-weight: 600; font-family: auto;">DELIVER TO:</div>
+          <div style="font-weight: 500; font-family: cursive;">{{address.name}}</div>
+          <div style="font-family: cursive;">{{address.mobile}}</div>
+          <div style="font-family: cursive;">{{address.Address}}</div>
+          <div style="font-family: cursive;">{{address.town}}-</div>
+          <div style="font-family: cursive;">{{address.pincode}},</div>
+          <div style="font-family: cursive;">{{address.state}}</div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

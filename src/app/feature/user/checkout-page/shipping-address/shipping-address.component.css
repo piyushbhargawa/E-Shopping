@@ -1,0 +1,61 @@
+.address {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+  grid-gap: 0.5em;
+}
+
+.addressCard {
+  background: white;
+}
+
+.addressCards {
+  position: relative;
+}
+
+.addAddress {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  height: 170px;
+}
+
+.plusIcon {
+  font-size: 47px;
+  border: solid;
+  border-radius: 50%;
+  padding-left: 4px;
+  padding-right: 3px;
+  padding-top: 2px;
+  position: absolute;
+  top: 32%;
+  left: 39%;
+  background: #ffa400;
+  border-color: orange;
+  color: antiquewhite;
+}
+
+.plusIcon:hover {
+  cursor: pointer;
+}
+
+.chooseAddress {
+  position: absolute;
+  z-index: 9;
+  right: 5px;
+  top: 4px;
+  font-size: 16px;
+}
+
+.chooseAddress:hover {
+  cursor: pointer;
+}
+
+.choosenAddress {
+  color:rgba(255, 152, 0, 0.78);
+}
+
+@media all and (max-width: 699px) {
+  .address {
+    justify-content: center;
+    margin-right: 39px;
+  }
+}

@@ -1,0 +1,54 @@
+<h1 mat-dialog-title>Product Details</h1>
+<div mat-dialog-content>
+  <div class="avatarDiv">
+    <input style="display: none;" type="file" (change)="onFileSelected($event)" #fileInput />
+    <img [src]="imgSrc" (click)="fileInput.click()" alt="Avatar" class="avatar" />
+    <div class="productImg">
+      <div *ngFor="let i of data1.image" class="image">
+        <img [src]="i" class="avatar">
+        <i class="fa fa-times-circle imageIcon" (click)="deleteImg(i)"></i>
+      </div>
+    </div>
+  </div>
+  <mat-form-field>
+    <mat-label>Product ID</mat-label>
+    <input matInput [(ngModel)]="data1.id">
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Product Brand</mat-label>
+    <input matInput [(ngModel)]="data1.brand">
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Product Price</mat-label>
+    <input matInput [(ngModel)]="data1.price">
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Category</mat-label>
+    <input matInput [(ngModel)]="data1.category">
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Sub-Category</mat-label>
+    <input matInput [(ngModel)]="data1.subcategory">
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-chip-list">
+    <mat-chip-list #chipList aria-label="Description selection">
+      <mat-chip *ngFor="let description of data1.description" [selectable]="selectable" [removable]="removable"
+        (removed)="remove(description)">
+        {{ description | slice:0:20}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input placeholder="Description" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+  </mat-form-field>
+  <br />
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data1" cdkFocusInitial>Ok</button>
+</div>

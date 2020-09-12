@@ -1,0 +1,59 @@
+.sidenav {
+  position: absolute;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+  width: 15%;
+  min-height: 600px;
+  height: 100%;
+  background: linear-gradient(
+    -173deg,
+    #e6e6e6 -14%,
+    rgb(153, 148, 148) 7%,
+    rgba(42, 42, 46, 0.97) 63%
+  );
+}
+
+.vl {
+  width: 157px;
+  border: 1px solid white;
+  padding: 32px;
+  position: absolute;
+  top: 61px;
+  padding-bottom: 325px;
+  left: 15px;
+}
+/*
+.vl1 {
+  border-left: 1px solid white;
+  height: 500px;
+  width: 1px;
+  position: absolute;
+  top: 27px;
+  right: 9px;
+}
+
+.hl {
+  height: 1px;
+  width: 81px;
+  position: absolute;
+  top: 7px;
+  right: 9px;
+}
+
+.h2 {
+  height: 1px;
+  width: 132px;
+  position: absolute;
+  bottom: 71px;
+  right: 9px;
+}
+
+.legend {
+  position: absolute;
+  top: 18px;
+  left: 19px;
+  color: white;
+} */

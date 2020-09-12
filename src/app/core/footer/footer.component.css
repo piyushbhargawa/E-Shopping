@@ -1,0 +1,32 @@
+.footer {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background: rgba(29, 29, 31, 0.97);
+  color: white;
+  text-align: center;
+}
+
+.info {
+  background: rgb(11, 11, 12);
+}
+
+.logo {
+  display: inline-flex;
+}
+
+.brand-tag {
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 250px) {
+  .brand-tag {
+    font-size: medium;
+  }
+}
+
+@media only screen and (max-width: 210px) {
+  .brand-tag {
+    font-size: small;
+  }
+}

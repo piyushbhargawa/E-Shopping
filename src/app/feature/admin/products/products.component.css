@@ -1,0 +1,180 @@
+.main {
+  margin-top: 50px;
+  width: 100%;
+  height: max-content;
+  min-height: 700px;
+  background: linear-gradient(-40deg, black 1%, transparent 223%);
+  transition: 0.5s;
+  /* overflow: hidden; */
+}
+
+.menu {
+  position: fixed;
+  z-index: 999;
+  top: 70px;
+}
+
+.search-results {
+  height: 100%;
+  overflow-y: null;
+}
+
+.productCards-100 {
+  margin-left: 250px;
+}
+
+.productCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+  padding-top: 50px;
+  padding-left: 35px;
+  grid-gap: 0.5em;
+  transition: 0.5s;
+}
+
+.card {
+  position: relative;
+  height: 287px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.add {
+  font-size: 85px;
+  width: 85px;
+  position: absolute;
+  top: 31%;
+  left: 37%;
+  color: #00cb00;
+  ;
+}
+
+.add:hover {
+  transform: scale(1.1);
+}
+
+.productCard {
+  height: 285px;
+  position: relative;
+  border-radius: 10px;
+  transition: 300ms;
+  grid-auto-columns: 300px;
+}
+
+mat-card-content {
+  position: absolute;
+}
+
+.mat-card-image:first-child {
+  margin-top: 0px;
+}
+
+img {
+  height: 200px;
+  /* width: 116px; */
+  width: 60%;
+  transition: 300ms;
+}
+
+.productsCard {
+  transition: 300ms;
+}
+
+.productsCard:hover {
+  cursor: pointer;
+  z-index: 1;
+}
+
+.pImg {
+  display: flex;
+  justify-content: center;
+}
+
+.price {
+  font-size: large;
+}
+
+.main-container {
+  position: relative;
+}
+
+.sidenav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  min-height: 100%;
+  width: 20px;
+  z-index: 1;
+  left: 0;
+  background-color: rgb(29, 29, 31);
+  overflow-x: hidden;
+  transition: 0.5s;
+  color: white;
+}
+
+.w-100 {
+  width: 250px;
+  background-color: rgb(29, 29, 31, 0.94);
+}
+
+.ham {
+  font-size: 25px;
+  padding: 14px 16px;
+  color: white;
+  font-size: 25px;
+  padding: 14px 16px;
+  color: white;
+  transform: rotate(270deg);
+  position: fixed;
+  top: 59px;
+  z-index: 999;
+  left: -7px;
+  transition: 0.5s;
+}
+
+.ham-100 {
+  left: 222px;
+  left: 222px;
+  transform: rotate(90deg);
+  color: #50d0fb;
+}
+
+.ham:hover {
+  cursor: pointer;
+  color: #50d0fb;
+}
+
+.modelName {
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.delete {
+  position: absolute;
+  right: 17px;
+}
+
+.delete:hover {
+  cursor: pointer;
+
+}
+
+@keyframes popUp {
+  0% {
+    display: none;
+  }
+  100% {
+    display: initial;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .productCards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding-right: 24px;
+  }
+}

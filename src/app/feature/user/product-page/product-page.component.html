@@ -1,0 +1,78 @@
+<div class="main-container" *ngIf="noProd">
+  <div id="mySidenav" class="sidenav" [ngClass]="{ 'w-100': showSidebar === true }">
+    <div class="brands" [ngClass]="{ 'brands-100': showSidebar === true }">
+      <mat-chip-list class="chips">
+        <mat-chip *ngFor="let i of brands">{{ i }}</mat-chip>
+      </mat-chip-list>
+      <hr>
+      <mat-label>Brands</mat-label>
+      <div *ngFor="let brand of filterBrands">
+        <mat-checkbox [value]="brand" (change)="brandsFilter($event)">{{brand}}</mat-checkbox>
+      </div>
+      <mat-label>Price</mat-label>
+      <mat-slider thumbLabel [displayWith]="formatLabel" class="priceSlider" [max]="max" [min]="min" [(ngModel)]="value"
+        (change)="slider($event)">
+      </mat-slider>
+    </div>
+  </div>
+  <span class="ham" (click)="toggleNav()" [ngClass]="{ 'ham-100': showSidebar === true }"><i
+      class="fa fa-get-pocket"></i></span>
+
+  <div class="main" [ngClass]="{ 'main-100': showSidebar === true }">
+    <mat-paginator class="pageination" [length]="length" [pageSize]="8" (page)="pagination($event)">
+    </mat-paginator>
+
+    <div class="product"  *ngIf="datBool">
+      <div *ngFor="let product of products" class="productsCard">
+      <div class="ph-item">
+        <div class="ph-col-12">
+            <div class="ph-picture"></div>
+            <div class="ph-row">
+                <div class="ph-col-6 big"></div>
+                <div class="ph-col-4 empty big"></div>
+                <div class="ph-col-2 big"></div>
+                <div class="ph-col-4"></div>
+                <div class="ph-col-8 empty"></div>
+                <div class="ph-col-6"></div>
+                <div class="ph-col-6 empty"></div>
+                <div class="ph-col-12"></div>
+            </div>
+        </div>
+      </div>
+      </div>
+      </div>
+
+    <div class="product" *ngIf="!datBool">
+      <div *ngFor="let product of products" class="productsCard">
+        <img src="../../../../assets/cartLogo.png" (click)="cart(product)" class="cartLogo">
+        <mat-card class="productCard">
+          <div class="pImg">
+            <img mat-card-image [src]="product.image[0]" (click)="openParticularPage(product)"/>
+          </div>
+          <mat-card-content>
+            <div class="modelName">
+              {{ product.brand + " " + product.id | slice:0:20}}
+            </div>
+            <div class="price">&#8377; {{ product.price }}</div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button class="button" (click)="buyNow(product)">
+              <div class="fillDiv"></div>
+              <div class="color">Buy Now</div>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="notFound" *ngIf="!noProd">
+  <div class="noContent">
+  <div class="noprod">We looked</div>
+  <div class="noprod1">everywhere.</div>
+  <div class="noprod2">Looks like there is no product for this search.</div>
+  </div>
+  <img [src]="noProduct" class="notFoundImage">
+</div>

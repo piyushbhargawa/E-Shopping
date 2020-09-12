@@ -1,0 +1,168 @@
+.main {
+  display: block;
+  width: 100%;
+  position: relative;
+  min-height: 700px;
+  margin-top: 50px;
+  background: linear-gradient(3deg, black, grey);
+  /* background: linear-gradient(-177deg, #e6e6e6 0%, rgb(153, 148, 148) 51%, rgba(42, 42, 46, 0.97) 75%); */
+}
+
+.carousel {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#carouselImage1 {
+  width: 100%;
+  height: 400px;
+
+}
+
+#carouselImage2 {
+  width: 100%;
+  height: 400px;
+}
+
+#carouselImage3 {
+  width: 100%;
+  height: 400px;
+}
+
+#carouselImage4 {
+  width: 100%;
+  height: 400px;
+}
+
+/* .main {
+  margin-top: 50px;
+} */
+
+.flex-container {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* margin-bottom: 70px; */
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px 0 #b0c1d9, 0 6px 20px 0 #b0c1d9;
+  cursor: pointer;
+}
+
+.card {
+    font-family: monospace;
+    /* border-radius: 31px; */
+    position: relative;
+    min-width: 200px;
+    border-radius: 15px;
+    min-height: 264px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* .cards {
+  transform: translate3d(10px, -59px, 0px);
+} */
+
+.title {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  margin: 0;
+  opacity: 0;
+  color: #50d0fb;
+  /* color: white; */
+  z-index: 10;
+}
+
+.card:hover .title{
+  /* background:rgba(29, 29, 31, 0.04);
+  color: white; */
+  opacity: 1;
+}
+
+.mat-card-image:first-child {
+  margin-top: 0;
+}
+
+.cardImg {
+  /* width: 200px;
+  height: 200px; */
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    margin-top: 0px;
+}
+
+/* .cardImg:hover {
+  background:rgba(29, 29, 31, 0.8);
+} */
+
+@media only screen and (max-width: 768px) {
+  #carouselImage1 {
+    height: 200px;
+  }
+
+  #carouselImage2 {
+    height: 200px;
+  }
+
+  #carouselImage3 {
+    height: 200px;
+  }
+
+  #carouselImage4 {
+    height: 200px;
+  }
+
+  .search-hero {
+    max-width: 200px;
+    float: left;
+    margin-left: 10px;
+  }
+  .flex-container {
+    margin-top: 0px;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .flex-container {
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .card {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cardImg {
+    margin: 0 0px 16px 0px;
+    margin-top: 0px;
+  }
+}

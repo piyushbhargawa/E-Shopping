@@ -1,0 +1,68 @@
+<div class="bg-image"></div>
+<div fxLayout="row" fxLayoutAlign="center center" class="login-main">
+  <mat-card class="bg-text">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <form
+      [formGroup]="loginForm"
+      autocomplete="off"
+      novalidate
+      (ngSubmit)="login()"
+    >
+      <mat-card-content fxLayout="column">
+        <mat-form-field>
+          <input matInput placeholder="User Name" formControlName="userName" required/>
+          <mat-hint align="end">Not more then 20 characters long.</mat-hint>
+          <mat-error *ngIf="hasError('userName', 'required')"
+            >Name is required</mat-error
+          >
+          <mat-error *ngIf="hasError('userName', 'maxlength')"
+            >You have more than 20 characters</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input
+            matInput
+            placeholder="Password"
+            [type]="hide ? 'password' : 'text'"
+            formControlName="password"
+            required
+          />
+          <mat-error *ngIf="hasError('password', 'required')"
+            >Password is required</mat-error
+          >
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon class="visibleButton">{{
+              hide ? "visibility_off" : "visibility"
+            }}</mat-icon>
+          </button>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="checkbox remember">
+          <label><input type="checkbox" value="" />Remember me</label>
+        </div>
+        <div class="abc">
+          <a (click)="signUp()" class = signUp>Not a Member? Sign up</a>
+          <button
+            mat-raised-button
+            color="primary"
+            class="login"
+            (click)="login()"
+            [disabled]="!loginForm.valid"
+          >
+            Login
+          </button>
+        </div>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

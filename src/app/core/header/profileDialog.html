@@ -1,0 +1,67 @@
+<div class="main">
+  <div class="bgimg"></div>
+  <div mat-dialog-actions class="close">
+    <mat-icon class="matClose" (click)="onNoClick()">clear</mat-icon>
+  </div>
+  <div mat-dialog-content>
+    <div class="dialogImg">
+      <img [src]="data.photo" width="100" height="100" />
+    </div>
+    <div class="dialogForm">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="data.name" readonly />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="data.email" readonly />
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dialogImg {
+    display: flex;
+    justify-content: center;
+    /* z-index: 10; */
+    position: relative;
+    margin-top: 16px;
+  }
+  .dialogForm {
+    margin-left: 30px;
+    margin-top: 9px;
+  }
+  .main {
+    position: relative;
+  }
+  ::ng-deep .mat-form-field-label {
+    color: #50d0fb !important;
+  }
+  .bgimg {
+    position: absolute;
+    background-image: url("../../../assets/profileBack.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 100%;
+    min-height: 50px;
+  }
+  img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    border: solid 3px;
+    border-color: aquamarine;
+  }
+  .matClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* z-index: 10; */
+  }
+  .close:hover .matClose {
+    color: blue;
+  }
+</style>

@@ -1,0 +1,56 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+  color: white;
+}
+
+::ng-deep.mat-form-field-underline {
+  background-color: white !important;
+}
+
+::ng-deep.mat-form-field-label {
+  color: white !important;
+}
+
+td, th {
+  width: 25%;
+}
+
+.noOrders {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  color: white;
+}
+
+.noOrdersImg {
+  width: 320px;
+  /* display: none; */
+}
+
+.notext {
+  font-size: 25px;
+  margin-top: 15px;
+  font-weight: 500;
+  font-family: none;
+  /* position: absolute;
+  right: 80px; */
+}
+
+@media all and (max-width: 900px) {
+  .noOrdersImg {
+    display: initial;
+  }
+  .noOrderAnime {
+    display: none;
+  }
+  .notext {
+    position: initial;
+  }
+}

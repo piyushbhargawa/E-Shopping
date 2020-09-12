@@ -1,0 +1,98 @@
+.main {
+  margin-top: 50px;
+  width: 100%;
+  height: max-content;
+  min-height: 700px;
+  background: linear-gradient(
+    -173deg,
+    #e6e6e6 0%,
+    rgb(153, 148, 148) 22%,
+    rgba(42, 42, 46, 0.97) 70%
+  );
+}
+
+.menu {
+  position: sticky;
+  z-index: 999;
+  top: 70px;
+}
+
+.userCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 155px));
+  padding-top: 30px;
+  padding-left: 35px;
+  grid-gap: 0.7em;
+}
+
+.userCard {
+  position: relative;
+  /* height: 130px; */
+}
+
+.userPhoto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.userPhotos {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  /* z-index: 999; */
+  left: 27px;
+  top: 16px;
+}
+
+.userId {
+  font-size: 17px;
+  font-weight: 500;
+  color: #3aa7d9;
+}
+
+.userImg {
+  text-align: center;
+}
+
+mat-card {
+  display: block;
+  animation: show123 1s linear alternate;
+}
+
+@keyframes show123 {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    display: block;
+  }
+}
+
+.userName {
+  font-family: cursive;
+}
+
+.userDOB {
+  font-family: cursive;
+}
+
+/* .userCard:hover mat-card {
+  display: block;
+  z-index: 999;
+} */
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media all and (max-width: 350px) {
+  .userCards {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 147px));
+  }
+}

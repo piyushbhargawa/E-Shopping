@@ -1,0 +1,23 @@
+.odome {
+  display: inline-flex;
+  font-size: 70px;
+  font-weight: 800;
+  border-radius: 24px;
+  font-family: fantasy;
+  color: #ffc107e0;
+}
+
+.rupee {
+  width: max-content;
+  padding-top: 35px;
+  padding-right: 8px;
+}
+
+@media all and (max-width: 799px) {
+  .odome {
+    font-size: 45px;
+  }
+  .rupee {
+    padding-top: 21px;
+  }
+}

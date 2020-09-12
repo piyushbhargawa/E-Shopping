@@ -1,0 +1,64 @@
+<header>
+  <nav class="navbar navbar-inverse navBar navbar-fixed-top navBar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar iconb1"></span>
+          <span class="icon-bar iconb2"></span>
+        </button>
+        <div class="navbar-brand brand">
+          <img [src]="'assets/logo.png'" class="logo" (click)="home()" />
+          <h2 class="brand-tag">ShoppingCart.com</h2>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav dropdown1">
+          <li><a [matMenuTriggerFor]="menu" class="category"
+              *ngIf="authenticationService.isAdmin() !== 'true'">Category</a></li>
+          <div>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="elect('Electronics')">Electronics</button>
+              <button mat-menu-item (click)="elect('Apparels')">Apparels</button>
+              <button mat-menu-item (click)="elect('Furnitures')">Furnitures</button>
+              <button mat-menu-item (click)="elect('Watches')">Watches</button>
+            </mat-menu>
+          </div>
+        </ul>
+        <ul class="nav navbar-nav navbar-search">
+          <li>
+            <div class="search-hero">
+              <input class="form-control" type="text" name="search" [(ngModel)]="searchText" (keyup.enter)="search()"
+                autocomplete="off" placeholder="&#61442;  Search for a product, category or more"
+                [ngClass]="{'adminSearch': (authenticationService.isAdmin() === 'true')}" />
+            </div>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <div class="profileIcon" *ngIf="authenticationService.loggedIn()">
+              <div><img [src]="currentUser[0].photo" class="profile"></div>
+              <div class="profileContent">
+                <div class="bgimage">
+                  <b>Hi, {{currentUser[0].id || 'user'}}!</b>
+                </div>
+                <div class="line"></div>
+                <a (click)="openDialog()">Profile</a>
+                <a (click)="logout()">Log out</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <i *ngIf="authenticationService.isAdmin() !== 'true'"
+              [ngClass]="{'cartBadge': authenticationService.loggedIn() === true}" class="fa fa-shopping-cart cart"
+              [matBadge]="authenticationService.cartItems()" matBadgePosition="before" matBadgeColor="accent"
+              (click)="cart()"></i>
+          </li>
+          <li>
+            <a *ngIf="!authenticationService.loggedIn()" (click)="login()" class="login"><span
+                class="glyphicon glyphicon-log-in icon"></span> Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

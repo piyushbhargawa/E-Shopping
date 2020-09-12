@@ -1,0 +1,31 @@
+<div class="menu">
+  <app-expanding-menu></app-expanding-menu>
+</div>
+<div class="main-container">
+  <div class="main">
+    <!-- <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" [scrollWindow]="false" [infiniteScrollContainer]="selector"
+      [fromRoot]="true" (scrolled)="onScroll()"></div> -->
+    <div infiniteScroll [infiniteScrollDistance]="0.3" [infiniteScrollUpDistance]="1.5" [infiniteScrollThrottle]="500"
+      (scrolled)="onScroll()" [scrollWindow]="true" class="search-results">
+      <div class="productCards" [ngClass]="{ 'productCards-100': showSidebar === true }">
+        <mat-card class="card">
+          <i class="fa fa-plus-circle add" (click)="add()"></i>
+        </mat-card>
+        <div *ngFor="let product of products" class="productsCard">
+          <mat-card class="productCard">
+            <i class="fa fa-close delete" (click)="delete(product)"></i>
+            <div class="pImg">
+              <img mat-card-image [src]="product.image[0]" (click)="update(product)" />
+            </div>
+            <mat-card-content>
+              <div class="modelName">
+                {{ product.brand + " " + product.id | slice:0:20 }}
+              </div>
+              <div class="price">{{ product.price | currency: 'INR'}}</div>
+            </mat-card-content>
+            <mat-card-actions> </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>

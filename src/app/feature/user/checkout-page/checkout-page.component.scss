@@ -1,0 +1,213 @@
+.main {
+  display: grid;
+  grid-template-areas: "content content content price";
+  margin-top: 50px;
+  background: linear-gradient(45deg, black -9%, grey);
+  width: 100%;
+  height: max-content;
+  min-height: 700px;
+}
+
+.progress {
+  max-width: 521px;
+  width: 100%;
+  padding-right: 40px;
+  padding-top: 48px;
+  padding-left: 22px;
+  height: max-content;
+  background: transparent;
+  transition: 0.3s;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: orange;
+}
+
+.content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+  margin-right: 11px;
+}
+
+.redirectedPage {
+  margin-left: 23px;
+}
+
+.priceDetails {
+  grid-area: price;
+}
+
+.button {
+  height: 45px;
+  width: 140px;
+  background: rgba(0, 0, 0, 0);
+  margin-top: 9px;
+  width: 100%;
+  background-color: #c78d22;
+  border-color: #c78d22;
+  font-weight: 500;
+  position: relative;
+  outline: none;
+  border-radius: 10px;
+  border-style: solid;
+}
+
+.fillDiv {
+  position: absolute;
+  border-radius: 8px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  right: 0;
+}
+
+.color {
+  color: white;
+  position: absolute;
+  z-index: 999;
+  top: 27%;
+  left: 4%;
+  right: 0;
+}
+
+.button:hover {
+  border-color: transparent;
+  .fillDiv {
+    animation: fill2 0.7s ease-in-out, fixed2 1s ease-in 0.7s infinite;
+  }
+}
+
+@keyframes fill2 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes fixed2 {
+  0%,
+  100% {
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.outer {
+  width: 1px;
+  /* height: 100%; */
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  position: sticky;
+  top: 71px;
+  height: 62%;
+}
+.inner {
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  background: white;
+  top: 30%;
+  box-shadow: 0px 0px 30px 20px grey;
+}
+
+.details {
+  position: sticky;
+  top: 90px;
+  padding: 24px 0 0 16px;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.qty {
+  margin-top: 42px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  right: 28px;
+  top: 16px;
+}
+
+.tag {
+  text-align: center;
+  font-size: larger;
+  font-weight: 700;
+}
+
+.cat {
+  font-size: small;
+  font-weight: 400;
+  font-family: serif;
+}
+
+.line {
+  color: grey;
+}
+
+.trash {
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.remove {
+  position: relative;
+  position: absolute;
+  bottom: 20px;
+  left: 200px;
+}
+
+.priceCard {
+  background: rgba(0, 0, 0, 0.1);
+  border-top: solid;
+  border-top-color: white;
+  color: white;
+  margin-right: 60px;
+}
+
+.pc1 {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.productImage {
+  width: 50px;
+  height: 50px;
+}
+
+.productImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+@media all and (max-width: 799px) {
+  .main {
+    grid-template-areas:  "content"
+                          "price";
+  }
+  .content {
+    margin-left: 10px;
+  }
+  .priceCard {
+    margin-right: 20px;
+  }
+  .pc1 {
+    margin-bottom: 10px;
+  }
+  .details {
+    position: initial;
+  }
+}

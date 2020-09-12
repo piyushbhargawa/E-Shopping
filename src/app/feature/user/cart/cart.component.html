@@ -1,0 +1,68 @@
+<div class="main1" *ngIf="!trigger">
+  <img
+    src="../../../../assets/cartEmpty.jfif">
+  <div class="tagLine">
+    <div class="tag">Your shopping bag is empty!</div>
+    <div class="line">It's a good day to buy the items you saved for later!</div>
+  </div>
+</div>
+<div class="headline" *ngIf="trigger">
+  Prices are inclusive of all taxes
+</div>
+<div class="main" *ngIf="trigger">
+  <div class="products">
+    <div *ngFor="let item of numbers" class="productCard">
+      <mat-card class="card">
+        <img mat-card-image [src]="cartProductsDetails[item].image[0]" (click)="productPage(cartProductsDetails[item].id)">
+        <mat-card-content>
+          <div class="name">{{ cartProductsDetails[item].brand+" "+cartProductsDetails[item].id }}</div>
+          <div class="cat">{{ cartProductsDetails[item].category }} > {{ cartProductsDetails[item].subcategory }}</div>
+          <div class="price">{{ cartProductsDetails[item].price | currency:"&#8377;"}}</div>
+          <div class="qty">
+            <button (click)="removeQty(item)"><i class="glyphicon glyphicon-minus"> </i></button>
+            {{qty[item]}}
+            <button (click)="addQty(item)"> <i class="glyphicon glyphicon-plus"> </i> </button>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button class="remove" (click)="remove(cartProductsDetails[item])"><span
+              class="glyphicon glyphicon-trash trash"></span>Remove</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="priceDetails">
+    <div class="outer">
+      <div class="inner"></div>
+    </div>
+    <div class="details">
+      <mat-card class="priceCard">
+        <mat-card-content style="font-family: monospace;">
+          <h3 style="font-size: large; font-weight: 500; font-family: monospace;">PRICE DETAILS</h3>
+          <div style="display: flex; justify-content: space-between;">Sub Total
+            <div>{{ total | currency:"&#8377;" }}</div>
+          </div>
+          <div style="display: flex; justify-content: space-between;">Discount
+            <div> {{discount | currency:"&#8377;"}} </div>
+          </div>
+          <div style="display: flex; justify-content: space-between;">Delivery
+            <div style="display: flex;"><s>{{49 | currency:"&#8377;"}} </s>
+              <div style="color: #03a685; margin-left: 3px;"> FREE</div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="priceCard pc1">
+        <mat-card-content>
+          <div style="display: flex; justify-content: space-between; font-weight: 700;">Bag Total
+            <div>{{total | currency:"&#8377;"}}</div>
+          </div>
+          <button class="button" (click)="checkout()">
+            <div class="fillDiv"></div>
+            <div class="color">Place Order</div>
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

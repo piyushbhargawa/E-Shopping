@@ -1,0 +1,20 @@
+<div class="menu">
+  <app-expanding-menu></app-expanding-menu>
+</div>
+<div class="main">
+  <div class="userCards">
+    <div class="userCard" *ngFor="let item of userData">
+      <img [src]="item.photo" class="userPhotos">
+      <mat-card class="card">
+        <div class="userImg">
+          <img [src]="item.photo" class="userPhoto">
+        </div>
+        <mat-card-content>
+          <mat-label class="userId">{{ item.id }}</mat-label>
+          <mat-label class="userName"><b>Name:</b> {{ item.first_name }}</mat-label>
+          <mat-label class="userDOB"><b>DOB:</b> {{ item.dateOfBirth | date: 'dd/MM/yyyy' || "NULL"}}</mat-label>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

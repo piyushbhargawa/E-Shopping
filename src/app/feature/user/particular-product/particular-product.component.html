@@ -1,0 +1,39 @@
+<div class="main">
+  <div class="images">
+    <img *ngFor="let i of data.image" width="60" height="60" [src]="i" class="shortImage" (click)="changeImage(i)">
+  </div>
+  <div class="zoom">
+    <pinch-zoom>
+      <img id="myimage" [src]="imgSrc" width="300" height="450">
+    </pinch-zoom>
+  </div>
+  <div class="content">
+    <div class="name">{{data.brand + " " + data.id}}</div>
+    <div class="price">&#8377; {{data.price}}</div>
+    <hr class="hl">
+    <div class="description">Description</div>
+    <ul *ngFor="let item of data.description">
+      <li>{{ item }}</li>
+    </ul>
+    <div>
+      <div>
+        <button class="button" *ngIf="cartBool" (click)="addingToCart()">
+          <div class="fillDiv"></div>
+          <div class="color">Add To Cart</div>
+        </button>
+        <button class="button" *ngIf="!cartBool" (click)="cart()">
+          <span class="glyphicon glyphicon-log-in flashIcon"></span>
+          <div class="fillDiv"></div>
+          <div class="color">Go To Cart</div>
+        </button>
+        <button class="button b1" (click)="buyNow()">
+          <span class="glyphicon glyphicon-flash flashIcon"></span>
+          <div class="fillDiv fillDiv1"></div>
+          <div class="color c1">Buy Now</div>
+        </button>
+      </div>
+      <img src="https://www.freeiconspng.com/uploads/free-shipping-logo-png-transparent-image-21.png" class="shipping">
+      <img src="https://pngimage.net/wp-content/uploads/2018/05/cash-on-delivery-png-8.png" class="shipping1">
+      <div>
+      </div>
+    </div>

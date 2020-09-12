@@ -1,0 +1,41 @@
+.paypal {
+  width: 524px;
+  margin-top: 8px;
+}
+
+.cod {
+  margin-bottom: 17px;
+  border-radius: 36px;
+  height: 55px;
+  font-size: 18px;
+  font-family: auto;
+  width: 524px;
+}
+
+.payment {
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media all and (max-width: 699px) {
+  .payment {
+    width: 331px;
+    margin-left: -14px;
+  }
+  .paypal {
+    width: 100%;
+  }
+  .cod {
+    width: 100%;
+    height: 46px;
+  }
+}
+
+@media all and (max-width: 330px) {
+  .payment {
+    width: 290px;
+    margin-left: -19px;
+  }
+}

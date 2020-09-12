@@ -1,0 +1,34 @@
+$color: #50d0fb;
+
+@mixin flexCenter($variable) {
+  @if $variable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  } @else {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@mixin responsive {
+  @if true {
+    @media all and (max-width: 899px) {
+      .price {
+        position: initial;
+      }
+    }
+  }
+}
+
+@mixin responsive1 {
+  @if true {
+    @media all and (max-width: 699px) {
+      .main {
+        grid-template-areas: "product"
+                             "price";
+      }
+    }
+  }
+}
